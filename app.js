@@ -22,8 +22,8 @@ const express     = require("express"),
         redirect_uris:["urn:ietf:wg:oauth:2.0:oob","http://localhost"]}};
         gmailNode.init(clientSecret, './token.json', function(err,data){ });
 
-var options = { server: { socketOptions: { keepAlive: 1 } } };
-var connectionString = 'mongodb://admin:anmol@duggal@localhost:27017/myDB';
+const options = { server: { socketOptions: { keepAlive: 1 } } };
+const connectionString = 'mongodb://admin:anmol@duggal@localhost:27017/myDB';
 
 mongoose.connect('mongodb://mnnit:KXiMsv8GpvW3cui@ds147965.mlab.com:47965/studentwelfare',{useNewUrlParser:true});
 
@@ -32,7 +32,7 @@ mongoose.connect('mongodb://mnnit:KXiMsv8GpvW3cui@ds147965.mlab.com:47965/studen
 
 // Connected handler
 mongoose.connection.on('connected', function (err) {
-  console.log("Connected to DB using chain: " + connectionString);
+  // console.log("Connected to DB using chain: " + connectionString);
 });
 
 // Error handler
@@ -78,7 +78,7 @@ app.get("*",function(req,res){
     req.flash("error","Page Does not Exist!");
     res.redirect("/welcome");
 });
-app.listen(process.env.PORT||3000,function(){
+app.listen(process.env.PORT||5000,function(){
 	console.log("server has started");
 });
 function isLoggedIn(req, res, next){
