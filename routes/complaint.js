@@ -4,15 +4,7 @@ var express     = require("express"),
     LocalStrategy = require("passport-local"),
     User        = require("../models/studentUser"),
     Notice       =require("../models/Notice"),
-    Complaint=require("../models/Complaint"),
-     smtpTransport = nodemailer.createTransport({
-    service: "Gmail",
-    auth: {
-        user: "anmolduggal619@gmail.com",
-        pass: "anmol@114307"
-    }
-}),
-     rand,mailOptions,host,link;
+    Complaint=require("../models/Complaint");
 
 router.get("/",isLoggedIn,function(req,res){
 	res.render("complaint");
