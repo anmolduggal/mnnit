@@ -3,7 +3,6 @@ var express     = require("express"),
   passport    = require("passport"),
     LocalStrategy = require("passport-local"),
     User        = require("../models/studentUser"),
-     nodemailer = require("nodemailer"),
     Notice       =require("../models/Notice"),
     Complaint=require("../models/Complaint"),
      smtpTransport = nodemailer.createTransport({
